@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+## Asun: Supertonin
 
-You can use the [editor on GitHub](https://github.com/Supertonin/supertoninsite/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Supertonin [“ST”] is an EIP20 token and OpenST is a protocol to support token economies 2 in mainstream consumer applications. The business and technical challenge we set out to solve is to enable mainstream consumer applications to benefit from deploying their own branded crypto-backed token economies, in a scalable and cryptographically auditable manner, without needing to mint and maintain their own publicly-tradeable EIP20 tokens.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Bridge between Consumer apps and Blockchains
 
-### Markdown
+To establish a channel between two chains, we require both chains to have a light client smart contract on each chain tracking the blocks on the other chain. In several configurations prior or ongoing work already exists. When we take into consideration the specifics of these chains then we can consider specific light client contracts which relieve the responsibility of a central party on mutually committing the latest state hashes on the other chain. As Ethereum mainnet operates a Nakamoto consensus engine (as the value chain) there is a soft requirement to set a threshold for the number of block confirmations to wait for until a state transition on Ethereum is considered finalised. If the utility chain is cryptographically validated by a known set of validators then those validators can each report the block hashes they have seen on public Ethereum and a block hash is considered final when consensus among the validators is reached. In the opposite direction, to report the latest block hash of the utility chain to the value chain, the logic involves no subjective threshold parameter when the utility chain is cryptographically sealed by a known set of validators as a complete light client can be implemented as a smart contract on Ethereum. In general a value chain will be a Proof-of-Work generated chain (for the near future at least), while a utility chain for efficiency reasons will likely be cryptographically sealed. It is therefore worthwhile to note that this asymmetry is by design: any halting or Byzantine failure of the utility chain can be proven by any user on the value chain to forcefully recover the staked assets on the value chain after a sufficiently long grace period should the utility chain fail to recover. This way users are assured to always be able to recover their original assets on the value chain. On the other hand a value chain can hard-fork at which point the utility chain can evaluate out of band whether to track both or one of the forked value chains going forward. As a net result of having complementary light client tracking contracts on both chains, the smart contracts have at their disposition knowledge of the state root of the other chain . Such transactions committing the blocks allow consequentially for state from the other chain to be asserted as true only if a Merkle-proof for those state variables can be proven against the committed root hash. Committing the root hash of the alternate chain allows for any party to present statements of what is true on that chain, removing the need for trusted oracles or trusted parties. A second benefit of this approach is that it strengthens immutability of either chain as the latest blocks are anchored into an independent chain. In particular if the utility chain is cryptographically sealed, anchoring the latest block on regular intervals into a (Proof-of-Work) value chain prevents any of the validators from rewriting the block history.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Supertonin/supertoninsite/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Token Information
+Token Address: 0x2A4D7071D2C8D300644287B3381375FA14e23bC2
+EtherDelta: https://etherdelta.com/#0x2a4d7071d2c8d300644287b3381375fa14e23bc2-ETH
+Whitepaper: https://docs.google.com/document/d/1zUjPupVE6LMnMbrA_F6Aj_IW-ADEcw049ncBKyOmk8I
+Supply: 8,000,000
